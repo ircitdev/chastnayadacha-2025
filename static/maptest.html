@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body { margin: 20px; font-family: sans-serif; }
+mapplic-map { display: block; width: 800px; border: 2px solid red; }
+</style>
+<link rel="stylesheet" href="wp-content/plugins/mapplic-wp/core/mapplic.css">
+</head>
+<body>
+<h2>Mapplic test</h2>
+<mapplic-map id="test" data-source="wp-content/uploads/mapplic/map-1183.json" data-path="wp-content/plugins/mapplic-wp/core/"></mapplic-map>
+<script src="wp-content/plugins/mapplic-wp/core/mapplic.js"></script>
+<script>
+document.querySelector('mapplic-map').addEventListener('mapReady', (e) => {
+  const shadow = document.querySelector('mapplic-map').shadowRoot;
+  const el = shadow.querySelector('.mapplic-element');
+  const container = shadow.querySelector('.mapplic-container');
+  const overlay = shadow.querySelector('.mapplic-overlay');
+  console.log('element size:', el?.offsetWidth, el?.offsetHeight);
+  console.log('container size:', container?.offsetWidth, container?.offsetHeight);
+  console.log('overlay size:', overlay?.offsetWidth, overlay?.offsetHeight);
+  console.log('overlay style:', overlay?.getAttribute('style'));
+});
+</script>
+</body>
+</html>

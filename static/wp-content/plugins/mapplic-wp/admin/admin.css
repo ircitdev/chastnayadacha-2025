@@ -1,0 +1,61 @@
+#postbox-container-1 { display: none; }
+#post-body { margin-right: 0 !important; }
+
+.mapplic-admin {
+	padding: 8px 0 0 0 !important;
+}
+
+#mapplic-builder {
+	color: black;
+	padding: 24px 0;
+}
+
+.mapplic-logo > img {
+	height: 24px;
+	padding-bottom: px;
+}
+
+#wpwrap {
+	background-color: #ffffff;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 240px), url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1.5' height='1.5' rx='0.75' fill='%23E5E7EB'/%3E%3C/svg%3E");
+}
+
+#title-prompt-text {
+	line-height: 0.8;
+}
+
+#mapplic-builder input,
+#mapplic-builder select {
+	border: none !important;
+	box-shadow: none !important;
+	background-color: transparent !important;
+}
+
+#mapplic-builder aside input,
+#mapplic-builder aside select {
+	padding: 0;
+	min-height: auto;
+	line-height: 16px;
+}
+
+#mapplic-builder aside *:not(.relative) > input[type="checkbox"] {
+	all: revert !important;
+	box-shadow: none !important;
+	border: initial !important;
+	padding: 0 !important;
+}
+
+#mapplic-builder aside *:not(.relative) > input[type="checkbox"]::before,
+#mapplic-builder aside *:not(.relative) > input[type="checkbox"]::after {
+	content: none !important;
+	display: none !important;
+}
+
+#mapplic-builder aside h4 {
+	font-size: 14px;
+}
+
+.wp-core-ui select {
+	padding: 12px;
+	max-width: 100%;
+}
