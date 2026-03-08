@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const STATIC_DIR = path.join(__dirname, 'static');
+const UPLOADS_DIR = path.join(__dirname, 'uploads');
 const PORT = 3000;
 
 const MIME = {
@@ -35,6 +36,11 @@ const server = http.createServer((req, res) => {
 
   // Map to file
   let filePath = path.join(STATIC_DIR, urlPath);
+
+  // Fallback: /uploads/* -> local uploads/ folder
+  if (!fs.existsSync(filePath) && urlPath.startsWith('/uploads/')) {
+    filePath = path.join(UPLOADS_DIR, urlPath.slice('/uploads/'.length));
+  }
 
   // If directory -> serve index.html
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
